@@ -17,6 +17,6 @@ assignment = IDENTIFIER ":=" expression
 expression = application-low
 application-low = lambda { "@" application-low }?
 lambda = { VARIABLE "->" }? application-high
-application-high = atom { atom }*
+application-high = { atom }+
 atom = VARIABLE | IDENTIFIER | "(" expression ")"
 ```
