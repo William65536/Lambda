@@ -1,10 +1,20 @@
 @ECHO OFF
 
+:: Try to use lldb
+:: Compile incrementally
+:: Use precompiled header files
+
 SET CC=clang
 SET FLAGS=-Wall -Wextra -Wpedantic -Werror -std=c11
 
+%CC% -c %FLAGS% -o TokenList.o Project\includes\TokenList.c
+
+%CC% -c %FLAGS% -o Scanner.o Project\includes\Scanner.c
+
+%CC% -c %FLAGS% -o Parser.o Project\includes\Parser.c
+
 %CC% -c %FLAGS% -o main.o Project\main.c
-%CC% -o Project\main main.o
+%CC% -o Project\main TokenList.o Scanner.o Parser.o main.o
 
 DEL *.o
 
