@@ -1,5 +1,9 @@
 # Lambda
 
+## References
+
+- [Efficient evaluation of lambda expressions](https://dl.acm.org/doi/pdf/10.1145/96709.96711)
+
 ## Errors
 
 
